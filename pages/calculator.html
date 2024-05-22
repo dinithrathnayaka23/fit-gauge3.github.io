@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Calculate with FiT Gauge</title>
+
+    <style>
+        .dinith{
+        background-color:#9E9E9E;
+        text-align: center;
+        font-family: Hind;
+        font-size: larger;
+        border-radius: 1vw;
+        }
+
+        body{
+            background-color: #E5E4E4;
+        }
+
+        .yenuli{
+            text-align: center;
+            font-size:2vw ;
+            font-family: hind;
+            font-weight: bold;
+            background-color:white;
+            padding-bottom:1vw;
+        }
+
+        .geeth{
+            height:150%;
+            width:10%;
+            border-radius:5% ;
+            font-family: hind;
+            font-weight: bold;
+            font-size: large;
+            transition-duration: 0.4s;
+            background-color: #9E9E9E;
+        }
+
+        .geeth:hover{
+            background-color:#E5E4E4;
+        }
+    </style>
+
+    
+
+</head>
+
+
+<body>
+
+    <div class="dinith">
+        <h1>FiT Gauge</h1>
+    </div>
+
+    <div class="yenuli">
+
+      <form >
+           <label for="weight">Weight(kg):</label><br>
+           <input type="text" id="weight" name="weight" placeholder="Enter your Weight" required><br>
+           <label for="height">Height(m):</label><br>
+           <input type="text" id="height" name="height" placeholder="Enter your Height" required><br>
+           <label for="age">Age(years):</label><br>
+           <input type="text" id="age" name="age" placeholder="Enter your Age" required><br>
+           <label for="gender">Gender:</label><br>
+           <input type="radio" id="male" name="gender" required value="male">
+           <label for="male">Male</label><br>
+           <input type="radio" id="female" name="gender" required value="female">
+           <label for="female">Female</label><br>
+           <input type="button" value="CALCULATE" class="geeth" onclick="calculate()">
+
+      </form>
+
+    </div>
+
+    <script>
+
+        function calculate() {
+             let weight= document.getElementById("weight").value;
+             let height= document.getElementById("height").value;
+            
+             let BMI= weight/height**2;
+             
+             if(BMI<18.5){
+                    alert( "BMI value:"+BMI+"kg/m2"+"\nStatus:"+"\nUnderweight");
+             }
+
+             else if(18.5<BMI && BMI<22.9){
+                    alert("BMI value:"+BMI+"kg/m2"+"\nStatus:"+"\nNormal");
+             }
+                    
+             else if(22.9<BMI && BMI<24.9){
+                    alert("BMI value:"+BMI+"kg/m2"+"\nStatus:"+"\nRisk to overweight");
+             }
+
+             else if(24.9<BMI && BMI<29.9){
+                    alert("BMI value:"+BMI+"kg/m2"+"\nStatus:"+"\nOverweight");
+             }
+
+             else{
+                    alert("BMI value:"+BMI+"kg/m2"+"\nStatus:"+"\nObese");
+             }
+
+
+        }
+                    
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
